@@ -1,0 +1,204 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>Normal Free Town</title>
+	
+	<style>
+
+		body {
+			margin: 75px;
+			font-size: 147px;
+			font-family: "Impact", Courier, monospace;
+		}
+
+		.button-container {
+			position: fixed;
+			bottom: 75px;
+			left: 75px;
+		}
+
+		.list-one.a {
+			color: blue;
+		}
+
+		.list-one.b {
+			color: green;
+		}
+
+		.list-two {
+			color: red;
+		}
+
+	</style>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			var one = [
+				"cute",
+				"dark",
+				"evil",
+				"flat",
+				"free",
+				"frozen",
+				"future",
+				"gentle",
+				"living",
+				"modern",
+				"new",
+				"normal",
+				"shy",
+				"pure",
+				"plastic",
+				"perfect",
+				"open",
+				"tiny",
+				"secret",
+				"subtle",
+				"sublime",
+				"unique",
+				"endless",
+				"punctual",
+				"revolving",
+				"shocking",
+				"fresh",
+				"bad",
+				"good"
+			];
+
+			var two = [
+				"alarm",
+				"blob",
+				"blood",
+				"bridge",
+				"bug",
+				"calendar",
+				"circle",
+				"clone",
+				"companion",
+				"frame",
+				"fountain",
+				"cow",
+				"deer",
+				"dog",
+				"door",
+				"dove",
+				"egg",
+				"error",
+				"face",
+				"glove",
+				"ghost",
+				"guest",
+				"group",
+				"hummingbird",
+				"house",
+				"index",
+				"joy",
+				"juice",
+				"jungle",
+				"logo",
+				"key",
+				"lens",
+				"mirror",
+				"life",
+				"math",
+				"telescope",
+				"test",
+				"milk",
+				"morning",
+				"moon",
+				"park",
+				"path",
+				"umbrella",
+				"tingle",
+				"time",
+				"picture",
+				"powder",
+				"puddle",
+				"quest",
+				"rain",
+				"sleep",
+				"snow",
+				"style",
+				"sweat",
+				"ghost",
+				"ping",
+				"power",
+				"puzzle",
+				"quip",
+				"rock",
+				"song",
+				"sport",
+				"surgery",
+				"sword",
+				"umbrella",
+				"tingle",
+				"time",
+				"genius",
+				"correspondence",
+				"star",
+				"menu",
+				"puzzle",
+				"bubble",
+				"air",
+				"diary",
+				"receipt",
+				"club",
+				"town"
+			];
+
+			function select_random(x){
+				y = x[Math.floor(Math.random()*x.length)];
+				return y;
+			}
+
+			function generate(){
+
+				var selected_one_a = select_random(one);
+				// var selected_one_b = select_random(one);
+				var selected_two = select_random(two);
+
+				// $('body').append('<p>');
+				// $('body').append('<span class="list-two">' + selected_two + '</span> ');
+				// $('body').append('<span class="list-one">' + selected_one + '</span>');
+				// $('body').append('</p>');
+
+				$('.list-one.a').html(selected_one_a);
+				// $('.list-one.b').html(selected_one_b);
+				$('.list-two').html(selected_two);
+
+			}
+
+			function timeout() {
+			    setTimeout(function () {
+			        generate();
+			        timeout();
+			    }, 3000);
+			}
+
+			generate();
+
+			timeout();
+			
+		});
+
+	</script>
+
+</head>
+
+<body>
+
+	<span class="list-one a"></span>
+	<!-- <span class="list-one b"></span> -->
+	<span class="list-two"></span>
+
+</body>
+
+</html>
